@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker</title>
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind & DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- fontawasome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font CSS -->
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F8FAFC]">
+    <!-- Header -->
+    <header class="max-w-6xl mx-auto pt-15 text-[#002C5C]">
+        <h2 class="text-3xl font-bold">Job Application Tracker</h2>
+        <div class="track-box mt-7 pb-7 grid grid-cols-1 lg:grid-cols-3 gap-4 border-b-2 border-gray-300">
+            <div class="total bg-white rounded-md p-5 space-y-2">
+                <p class="font-medium">Total</p>
+                <h2 class="text-3xl font-bold">0</h2>
+            </div>
+            <div class="total bg-white rounded-md p-5 space-y-2">
+                <p class="font-medium">Interview</p>
+                <h2 class="text-3xl font-bold">0</h2>
+            </div>
+            <div class="total bg-white rounded-md p-5 space-y-2">
+                <p class="font-medium">Rejected</p>
+                <h2 class="text-3xl font-bold">0</h2>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- available jobs  -->
+        <section class="mt-7 max-w-6xl mx-auto text-[#002C5C]">
+
+            <!-- Top Nav -->
+            <div class="top-part ">
+                <h2 class="text-2xl font-bold mb-6"> Available Jobs</h2>
+                <div class="nav-bar flex gap-4">
+                    <button class="btn btn-soft text-white bg-blue-500 px-8 py-2">All</button>
+                    <button class="btn btn-soft text-gray-500 bg-white px-8 py-2">Interview</button>
+                    <button class="btn btn-soft text-gray-500 bg-white px-8 py-2">Rejected</button>
+                </div>
+            </div>
+
+            <!-- Card Section -->
+            <div class="card-box">
+                <div class="card space-y-4 bg-white rounded-lg p-6">
+                    <div class="top-text-icon flex justify-between">
+                        <span><h3>Mobile First Corp</h3>
+                    <p>React Native Developer</p></span>
+                    <div class="delete">
+                        <span class="border border-gray-500 rounded-full p-1 text-gray-500"><i class="fa-regular fa-trash-can"></i></span>
+                    </div>
+                    </div>
+                    <span>
+                        <p>Remote • Full-time • $130,000 - $175,000</p>
+                    </span>
+                    <button class="btn btn-soft text-[#002C5C] bg-gray-300 px-4 py-2">Not Applied</button>
+                    <p>Build cross-platform mobile applications using React Native. Work on products used by millions of
+                        users worldwide.</p>
+
+                    <div class="btn-part flex gap-4">
+                        <button
+                            class="btn btn-soft text-green-500 bg-white px-4 py-2 border-2 border-green-500">INTERVIEW</button>
+                        <button
+                            class="btn btn-soft text-red-500 bg-white px-4 py-2 border-2 border-red-500">REJECTED</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <!-- Js link -->
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
