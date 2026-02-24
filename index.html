@@ -34,15 +34,15 @@
         <div class="track-box mt-7 pb-7 grid grid-cols-1 lg:grid-cols-3 gap-4 border-b-2 border-gray-300">
             <div class="total bg-white rounded-md p-5 space-y-2">
                 <p class="font-medium">Total</p>
-                <h2 class="text-2xl font-bold">0</h2>
+                <h2 class="text-2xl font-bold" id="total">0</h2>
             </div>
             <div class="total bg-white rounded-md p-5 space-y-2">
                 <p class="font-medium">Interview</p>
-                <h2 class="text-2xl font-bold text-green-500">0</h2>
+                <h2 class="text-2xl font-bold text-green-500" id="interview">0</h2>
             </div>
             <div class="total bg-white rounded-md p-5 space-y-2">
                 <p class="font-medium">Rejected</p>
-                <h2 class="text-2xl font-bold text-red-500">0</h2>
+                <h2 class="text-2xl font-bold text-red-500" id="rejected">0</h2>
             </div>
         </div>
     </header>
@@ -55,14 +55,14 @@
             <div class="top-part ">
                 <h2 class="text-2xl font-bold mb-6"> Available Jobs</h2>
                 <div class="nav-bar flex gap-4">
-                    <button class="btn btn-soft text-white bg-blue-500 px-8 py-2">All</button>
-                    <button class="btn btn-soft text-gray-500 bg-white px-8 py-2">Interview</button>
-                    <button class="btn btn-soft text-gray-500 bg-white px-8 py-2">Rejected</button>
+                    <button onclick="toggleTo('all-nav')"       id="all-nav"        class="btn btn-soft text-white bg-blue-500 px-6 py-2">All</button>
+                    <button onclick="toggleTo('interview-nav')" id="interview-nav"  class="btn btn-soft text-gray-500 bg-white px-6 py-2">Interview</button>
+                    <button onclick="toggleTo('rejected-nav')"    id="rejected-nav"     class="btn btn-soft text-gray-500 bg-white px-6 py-2">Rejected</button>
                 </div>
             </div>
 
             <!-- Card Section -->
-            <div class="card-box text-gray-500 mt-7 space-y-4 pb-18">
+            <div class="card-box text-gray-500 mt-7 space-y-4 pb-18" id="cardParent">
                 <!-- card 1 -->
                 <div class="card space-y-4 bg-white rounded-lg p-6 border border-gray-200">
                     <div class="top-text-icon flex justify-between">
