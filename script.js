@@ -1,3 +1,4 @@
+//All variable
 let interviewList = [];
 let rejectedList = [];
 
@@ -25,6 +26,7 @@ const emptyTemplate = `
 `;
 let currentTab = 'all';
 
+//Functions starts
 function setFilterEmptyStyle() {
     filterSection.classList.remove('pt-0', 'bg-[#F8FAFC]');
     filterSection.classList.add('py-20', 'bg-white');
@@ -42,13 +44,6 @@ function countChild() {
 
 }
 countChild();
-function refreshCurrentView() {
-    if (currentTab === 'interview-nav') {
-        renderInterview();
-    } else if (currentTab === 'rejected-nav') {
-        renderRejected();
-    }
-}
 
 function toggleTo(id) {
     currentTab = id;
@@ -91,7 +86,7 @@ function extractCardData(parentNode) {
     };
 }
 
-
+//Event Listener function
 mainContainer.addEventListener('click', function (event) {
 
     const interviewBtn = event.target.closest('.interview-btn');
@@ -148,3 +143,56 @@ mainContainer.addEventListener('click', function (event) {
         return;
     }
 });
+
+//Interview section 
+function renderInterview() {
+    filterSection.innerHTML = '';
+
+    if (interviewList.length === 0) {
+        setFilterEmptyStyle();
+        filterSection.innerHTML = emptyTemplate;
+        return;
+    }
+
+    for (let part of interviewList) {
+        let div = document.createElement('div');
+        div.className = "card-container card space-y-4 bg-white rounded-lg p-6 border border-gray-200 mt-0 mb-7";
+        div.innerHTML = `
+            <div class="top-text-icon flex justify-between">
+                <span>
+                    <h3 class="card-title text-2xl font-bold text-[#002C5C]">${part.boxName}</h3>
+                    <p class="card-sub text-[1.1rem]">${part.boxSub}</p>
+                </span>
+                <button class="delete cursor-pointer">
+                    <span class="border border-gray-500 rounded-full p-1 text-gray-500">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </span>
+                </button>
+            </div>
+
+            <span>
+                <p class="sub-sub">${part.boxSubSub}</p>
+            </span>
+
+            <button class="not-applied btn btn-soft text-[#002C5C] font-bold bg-gray-200 px-4 py-2 w-30">
+                ${part.boxNotApplied}
+            </button>
+
+            <p class="blew-sub text-gray-700">${part.boxSubBlew}</p>
+
+            <div class="btn-part flex gap-4">
+                <button class="interview-btn btn btn-soft text-green-500 bg-white px-4 py-2 border-2 border-green-500">
+                    INTERVIEW
+                </button>
+                <button class="rejected-btn btn btn-soft text-red-500 bg-white px-4 py-2 border-2 border-red-500">
+                    REJECTED
+                </button>
+            </div>
+        `;
+        setFilterFilledStyle();
+
+        filterSection.appendChild(div);
+    }
+
+    countChild();
+}
