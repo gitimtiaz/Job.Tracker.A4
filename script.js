@@ -1,8 +1,6 @@
 let interviewList = [];
 let rejectedList = [];
 
-let currentTab = 'all';
-
 let total = document.getElementById('total');
 let interviewCount = document.getElementById('interview');
 let rejectedCount = document.getElementById('rejected');
@@ -17,13 +15,15 @@ const rejectedNav = document.getElementById('rejected-nav');
 
 const emptyTemplate = `
     <div class="flex justify-center">
-        <img src="./assets/jobs.png" alt="">
+        <img src="./assets/jobs.png">
     </div>
+
     <div class="text-center mt-5">
         <h3 class="font-bold text-2xl text-[#002C5C]">No jobs available</h3>
         <p class="text-gray-500">Check back soon for new job opportunities</p>
     </div>
 `;
+let currentTab = 'all';
 
 function setFilterEmptyStyle() {
     filterSection.classList.remove('pt-0', 'bg-[#F8FAFC]');
