@@ -24,7 +24,7 @@ const emptyTemplate = `
         <p class="text-gray-500">Check back soon for new job opportunities</p>
     </div>
 `;
-let currentTab = 'all';
+let currentTab = 'all-nav';
 
 //Functions starts
 function setFilterEmptyStyle() {
@@ -158,6 +158,7 @@ function renderInterview() {
         return;
     }
 
+    setFilterFilledStyle();
     for (let part of interviewList) {
         let div = document.createElement('div');
         div.className = "card-container card space-y-4 bg-white rounded-lg p-6 border border-gray-200 mt-0 mb-7";
@@ -193,8 +194,6 @@ function renderInterview() {
                 </button>
             </div>
         `;
-        setFilterFilledStyle();
-
         filterSection.appendChild(div);
     }
 
@@ -211,6 +210,7 @@ function renderRejected() {
         return;
     }
 
+    setFilterFilledStyle();
     for (let part of rejectedList) {
         const div = document.createElement('div');
         div.className = "card-container card space-y-4 bg-white rounded-lg p-6 border border-gray-200 mt-0 mb-7";
@@ -246,8 +246,6 @@ function renderRejected() {
                 </button>
             </div>
         `;
-        setFilterFilledStyle();
-
         filterSection.appendChild(div);
     }
 }
