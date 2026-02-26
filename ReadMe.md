@@ -1,4 +1,4 @@
-#  Job Application Tracker — Notes
+# Job Application Tracker — Notes
 
 While building this project, I used different DOM and event concepts. Below are my short explanations based on what I actually applied in the code.
 
@@ -42,7 +42,7 @@ This is how the filtered cards are rendered dynamically.
 
 ## 3. What is Event Bubbling? How does it work?
 
-Event bubbling means when an event happens on a child element, it first runs on that element and then bubbles up to its parents.
+Event bubbling means when an event happens on a child element, it first runs on that element and then bubbles up to its parent elements.
 
 So the flow is like:
 
@@ -60,42 +60,37 @@ Event delegation is when we attach one event listener to a parent and handle eve
 
 I used it on the main container like this:
 
-Instead of adding listeners to every card button
+- Instead of adding listeners to every card button
+- I added one listener on **`<main>`**
+- Then detected clicks using **`event.target.closest()`**
 
-I added one listener on **<main>**
-
-Then detected clicks using **event.target.closest()**
-
-Why it’s useful:
+**Why it’s useful:**
 
 - better performance
-
 - works for dynamically added elements
-
 - cleaner code
-
 - easier to maintain
 
 This was especially helpful since cards move between Interview and Rejected sections.
 
 ---
 
-## 5. Difference between preventDefault() and stopPropagation()
+## 5. Difference between `preventDefault()` and `stopPropagation()`
 
 These two are often confused but they do different things.
 
-**preventDefault()**
+**`preventDefault()`**
 Stops the browser’s default behavior.
 Example: stopping a form from submitting or a link from navigating.
 
-**stopPropagation()**
+**`stopPropagation()`**
 Stops the event from bubbling up to parent elements.
 
-In simple terms:
+**In simple terms:**
 
-**preventDefault()** → stops browser action
+**`preventDefault()`** → stops browser action
 
-**stopPropagation()** → stops event travel
+**`stopPropagation()`** → stops event travel
 
 In this project I mainly relied on bubbling (not stopping it) because event delegation depends on bubbling.
 
@@ -106,11 +101,8 @@ In this project I mainly relied on bubbling (not stopping it) because event dele
 This project helped me get more comfortable with:
 
 - DOM traversal
-
 - event delegation
-
 - dynamic rendering
-
 - state syncing between UI sections
 
 Still room to polish, but the core logic is working solid.
